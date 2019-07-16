@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFs-jE-8MK">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,7 +48,7 @@
         <!--Add New Photo-->
         <scene sceneID="mrs-KE-GTw">
             <objects>
-                <viewController id="8LS-rC-NYz" sceneMemberID="viewController">
+                <viewController id="8LS-rC-NYz" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yv2-gH-EKD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,16 +57,25 @@
                                 <rect key="frame" x="32.666666666666657" y="461" width="69" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="camera:" destination="8LS-rC-NYz" eventType="touchUpInside" id="VuH-20-bkw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmW-V2-krz">
                                 <rect key="frame" x="130.66666666666666" y="461" width="116" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="photoLibrary:" destination="8LS-rC-NYz" eventType="touchUpInside" id="Hiy-AR-WO9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdN-uV-IQC">
                                 <rect key="frame" x="276.66666666666669" y="461" width="66" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="albums:" destination="8LS-rC-NYz" eventType="touchUpInside" id="Gkg-27-qH1"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-Wl-tGI">
                                 <rect key="frame" x="32.666666666666657" y="342" width="310" height="30"/>
@@ -106,6 +115,13 @@
                         <viewLayoutGuide key="safeArea" id="jgl-2D-Ch2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="Idc-kN-uNS"/>
+                    <connections>
+                        <outlet property="cameraTapped" destination="4ai-kP-mvs" id="mT7-Vs-BXe"/>
+                        <outlet property="photoLibrary" destination="MmW-V2-krz" id="LBf-au-v49"/>
+                        <outlet property="saveTapped" destination="dkz-Qg-3fZ" id="jnN-OC-ik8"/>
+                        <outlet property="selectedImage" destination="rWt-1D-AOx" id="76J-tH-gRb"/>
+                        <outlet property="textField" destination="7eR-Wl-tGI" id="9lS-fU-SNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2G-3K-Nsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
